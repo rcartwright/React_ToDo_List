@@ -28,6 +28,7 @@
     "gulp-connect": "^2.3.1",
     "gulp-eslint": "^1.1.1",
     "gulp-open": "^1.0.0",
+    "jquery": "https://registry.npmjs.org/jquery/-/jquery-2.1.4.tgz",
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
     "reactify": "^1.1.1",
