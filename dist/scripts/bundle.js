@@ -28232,9 +28232,7 @@ module.exports = warning;
 module.exports = require('./lib/React');
 
 },{"./lib/React":26}],159:[function(require,module,exports){
-$ = jQuery = require('jquery');
-var React = require('react');
-
+    var React = require('react');
 
     var TodoBanner = React.createClass({displayName: "TodoBanner",
       render: function(){
@@ -28312,6 +28310,38 @@ var React = require('react');
 
 
 
-React.render(React.createElement(TodoApp, null), document.getElementById('app'));
+    module.exports = TodoApp;
 
-},{"jquery":2,"react":158}]},{},[159]);
+},{"react":158}],160:[function(require,module,exports){
+$ = jQuery = require('jquery');
+var React = require('react');
+var Home = require('./pages/index');
+
+
+
+    var App = React.createClass({displayName: "App",
+      render: function(){
+        return (
+          React.createElement(Home, null)
+        );
+      }
+    });
+
+React.render(React.createElement(App, null), document.getElementById('app'));
+
+},{"./pages/index":161,"jquery":2,"react":158}],161:[function(require,module,exports){
+var React = require('react');
+var Todo = require('../components/TodoApp');
+
+    var HomeApp = React.createClass({displayName: "HomeApp",
+      render: function(){
+        return (
+          React.createElement(Todo, null)
+        );
+      }
+    });
+
+
+    module.exports = HomeApp;
+
+},{"../components/TodoApp":159,"react":158}]},{},[160]);

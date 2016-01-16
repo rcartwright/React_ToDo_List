@@ -1,3 +1,5 @@
+    var React = require('react');
+
     var TodoBanner = React.createClass({
       render: function(){
         return (
@@ -71,3 +73,7 @@
       );
       }
     });
+
+
+
+    module.exports = TodoApp;

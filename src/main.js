@@ -1,9 +1,15 @@
 $ = jQuery = require('jquery');
 var React = require('react');
-var Home = require('./components/TodoApp');
+var Home = require('./pages/index');
 
 
 
+    var App = React.createClass({
+      render: function(){
+        return (
+          <Home />
+        );
+      }
+    });
 
-
-React.render(<TodoApp/>, document.getElementById('app'));
+React.render(<App/>, document.getElementById('app'));
