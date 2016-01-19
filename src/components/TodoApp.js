@@ -8,24 +8,25 @@
       }
     });
 
-    var TodoList = React.createClass({
-      render: function() {
-      var createItem = function(itemText) {
-        return (
-            <TodoListItem>{itemText}</TodoListItem>
-          );
-      };
-      return <ul>{this.props.items.map(createItem)}</ul>;
-      }
-    });
 
-    var TodoListItem = React.createClass({
-      render: function(){
-        return (
-          <li>{this.props.children}</li>
-        );
-      }
-    });
+
+
+var TodoListItem = React.createClass({
+  render: function() {
+    return <li key={this.props.data.id}>{this.props.data}</li>;
+  }
+});
+var TodoList = React.createClass({
+  render: function() {
+    return (
+      <ul>
+        {this.props.items.map(function(item) {
+           return <TodoListItem key={item.id} data={item}/>;
+        })}
+      </ul>
+    );
+  }
+});
 
     var TodoForm = React.createClass({
       getInitialState: function() {

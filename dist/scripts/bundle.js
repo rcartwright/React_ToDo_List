@@ -28242,24 +28242,25 @@ module.exports = require('./lib/React');
       }
     });
 
-    var TodoList = React.createClass({displayName: "TodoList",
-      render: function() {
-      var createItem = function(itemText) {
-        return (
-            React.createElement(TodoListItem, null, itemText)
-          );
-      };
-      return React.createElement("ul", null, this.props.items.map(createItem));
-      }
-    });
 
-    var TodoListItem = React.createClass({displayName: "TodoListItem",
-      render: function(){
-        return (
-          React.createElement("li", null, this.props.children)
-        );
-      }
-    });
+
+
+var TodoListItem = React.createClass({displayName: "TodoListItem",
+  render: function() {
+    return React.createElement("li", {key: this.props.data.id}, this.props.data);
+  }
+});
+var TodoList = React.createClass({displayName: "TodoList",
+  render: function() {
+    return (
+      React.createElement("ul", null, 
+        this.props.items.map(function(item) {
+           return React.createElement(TodoListItem, {key: item.id, data: item});
+        })
+      )
+    );
+  }
+});
 
     var TodoForm = React.createClass({displayName: "TodoForm",
       getInitialState: function() {
