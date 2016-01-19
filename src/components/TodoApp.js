@@ -66,7 +66,7 @@ var TodoList = React.createClass({
       },
       render: function() {
       return (
-        <div>
+        <div className="app-container">
         <TodoBanner/>
         <TodoList items={this.state.items}/>
         <TodoForm onFormSubmit={this.updateItems}/>

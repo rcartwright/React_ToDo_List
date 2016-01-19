@@ -28300,7 +28300,7 @@ var TodoList = React.createClass({displayName: "TodoList",
       },
       render: function() {
       return (
-        React.createElement("div", null, 
+        React.createElement("div", {className: "app-container"}, 
         React.createElement(TodoBanner, null), 
         React.createElement(TodoList, {items: this.state.items}), 
         React.createElement(TodoForm, {onFormSubmit: this.updateItems})
