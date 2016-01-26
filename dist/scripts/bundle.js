@@ -28314,6 +28314,19 @@ var TodoList = React.createClass({displayName: "TodoList",
     module.exports = TodoApp;
 
 },{"react":158}],160:[function(require,module,exports){
+var React = require('react');
+
+    var header = React.createClass({displayName: "header",
+      render: function(){
+        return (
+          React.createElement("h3", null, "This is the header")
+        );
+      }
+    });
+
+    module.exports = header;
+
+},{"react":158}],161:[function(require,module,exports){
 $ = jQuery = require('jquery');
 var React = require('react');
 var Home = require('./pages/index');
@@ -28330,14 +28343,18 @@ var Home = require('./pages/index');
 
 React.render(React.createElement(App, null), document.getElementById('app'));
 
-},{"./pages/index":161,"jquery":2,"react":158}],161:[function(require,module,exports){
+},{"./pages/index":162,"jquery":2,"react":158}],162:[function(require,module,exports){
 var React = require('react');
+var Header = require('../components/header/header');
 var Todo = require('../components/TodoApp');
 
     var HomeApp = React.createClass({displayName: "HomeApp",
       render: function(){
         return (
+        	React.createElement("div", null, 
+        React.createElement(Header, null), 
           React.createElement(Todo, null)
+          )
         );
       }
     });
@@ -28345,4 +28362,4 @@ var Todo = require('../components/TodoApp');
 
     module.exports = HomeApp;
 
-},{"../components/TodoApp":159,"react":158}]},{},[160]);
+},{"../components/TodoApp":159,"../components/header/header":160,"react":158}]},{},[161]);
