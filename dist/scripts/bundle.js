@@ -28316,6 +28316,19 @@ var TodoList = React.createClass({displayName: "TodoList",
 },{"react":158}],160:[function(require,module,exports){
 var React = require('react');
 
+    var footer = React.createClass({displayName: "footer",
+      render: function(){
+        return (
+          React.createElement("h3", null, "This is the footer")
+        );
+      }
+    });
+
+    module.exports = footer;
+
+},{"react":158}],161:[function(require,module,exports){
+var React = require('react');
+
     var header = React.createClass({displayName: "header",
       render: function(){
         return (
@@ -28326,7 +28339,7 @@ var React = require('react');
 
     module.exports = header;
 
-},{"react":158}],161:[function(require,module,exports){
+},{"react":158}],162:[function(require,module,exports){
 $ = jQuery = require('jquery');
 var React = require('react');
 var Home = require('./pages/index');
@@ -28343,17 +28356,20 @@ var Home = require('./pages/index');
 
 React.render(React.createElement(App, null), document.getElementById('app'));
 
-},{"./pages/index":162,"jquery":2,"react":158}],162:[function(require,module,exports){
+},{"./pages/index":163,"jquery":2,"react":158}],163:[function(require,module,exports){
 var React = require('react');
 var Header = require('../components/header/header');
 var Todo = require('../components/TodoApp');
+var Footer = require('../components/footer/footer');
+
 
     var HomeApp = React.createClass({displayName: "HomeApp",
       render: function(){
         return (
         	React.createElement("div", null, 
         React.createElement(Header, null), 
-          React.createElement(Todo, null)
+          React.createElement(Todo, null), 
+          React.createElement(Footer, null)
           )
         );
       }
@@ -28362,4 +28378,4 @@ var Todo = require('../components/TodoApp');
 
     module.exports = HomeApp;
 
-},{"../components/TodoApp":159,"../components/header/header":160,"react":158}]},{},[161]);
+},{"../components/TodoApp":159,"../components/footer/footer":160,"../components/header/header":161,"react":158}]},{},[162]);
