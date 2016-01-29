@@ -4,7 +4,7 @@ var MainContent = require('../components/main-content/mainContent');
 var Footer = require('../components/footer/footer');
 
 
-    var HomeApp = React.createClass({
+    var AboutApp = React.createClass({
       render: function(){
         return (
         	<div>
@@ -17,4 +17,4 @@ var Footer = require('../components/footer/footer');
     });
 
 
-    module.exports = HomeApp;
+    module.exports = AboutApp;

@@ -28340,30 +28340,91 @@ var React = require('react');
     module.exports = header;
 
 },{"react":158}],162:[function(require,module,exports){
+var React = require('react');
+
+    var main_content = React.createClass({displayName: "main_content",
+      render: function(){
+        return (
+          React.createElement("h3", null, "This is the main content")
+        );
+      }
+    });
+
+    module.exports = main_content;
+
+},{"react":158}],163:[function(require,module,exports){
 $ = jQuery = require('jquery');
 var React = require('react');
 var Home = require('./pages/index');
-
+var About = require('./pages/about');
+var Todo = require('./pages/todo');
 
 
     var App = React.createClass({displayName: "App",
       render: function(){
         return (
+        	React.createElement("div", null, 
           React.createElement(Home, null)
+            )
         );
       }
     });
 
+
 React.render(React.createElement(App, null), document.getElementById('app'));
 
-},{"./pages/index":163,"jquery":2,"react":158}],163:[function(require,module,exports){
+},{"./pages/about":164,"./pages/index":165,"./pages/todo":166,"jquery":2,"react":158}],164:[function(require,module,exports){
+var React = require('react');
+var Header = require('../components/header/header');
+var MainContent = require('../components/main-content/mainContent');
+var Footer = require('../components/footer/footer');
+
+
+    var AboutApp = React.createClass({displayName: "AboutApp",
+      render: function(){
+        return (
+        	React.createElement("div", null, 
+        React.createElement(Header, null), 
+          React.createElement(MainContent, null), 
+          React.createElement(Footer, null)
+          )
+        );
+      }
+    });
+
+
+    module.exports = AboutApp;
+
+},{"../components/footer/footer":160,"../components/header/header":161,"../components/main-content/mainContent":162,"react":158}],165:[function(require,module,exports){
+var React = require('react');
+var Header = require('../components/header/header');
+var MainContent = require('../components/main-content/mainContent');
+var Footer = require('../components/footer/footer');
+
+
+    var HomeApp = React.createClass({displayName: "HomeApp",
+      render: function(){
+        return (
+        	React.createElement("div", null, 
+        React.createElement(Header, null), 
+          React.createElement(MainContent, null), 
+          React.createElement(Footer, null)
+          )
+        );
+      }
+    });
+
+
+    module.exports = HomeApp;
+
+},{"../components/footer/footer":160,"../components/header/header":161,"../components/main-content/mainContent":162,"react":158}],166:[function(require,module,exports){
 var React = require('react');
 var Header = require('../components/header/header');
 var Todo = require('../components/TodoApp');
 var Footer = require('../components/footer/footer');
 
 
-    var HomeApp = React.createClass({displayName: "HomeApp",
+    var ToDoPage = React.createClass({displayName: "ToDoPage",
       render: function(){
         return (
         	React.createElement("div", null, 
@@ -28376,6 +28437,6 @@ var Footer = require('../components/footer/footer');
     });
 
 
-    module.exports = HomeApp;
+    module.exports = ToDoPage;
 
-},{"../components/TodoApp":159,"../components/footer/footer":160,"../components/header/header":161,"react":158}]},{},[162]);
+},{"../components/TodoApp":159,"../components/footer/footer":160,"../components/header/header":161,"react":158}]},{},[163]);

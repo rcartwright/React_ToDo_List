@@ -1,15 +1,15 @@
 var React = require('react');
 var Header = require('../components/header/header');
-var MainContent = require('../components/main-content/mainContent');
+var Todo = require('../components/TodoApp');
 var Footer = require('../components/footer/footer');
 
 
-    var HomeApp = React.createClass({
+    var ToDoPage = React.createClass({
       render: function(){
         return (
         	<div>
         <Header />
-          <MainContent />
+          <Todo />
           <Footer />
           </div>
         );
@@ -17,4 +17,4 @@ var Footer = require('../components/footer/footer');
     });
 
 
-    module.exports = HomeApp;
+    module.exports = ToDoPage;
