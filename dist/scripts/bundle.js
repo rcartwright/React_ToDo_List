@@ -28358,7 +28358,9 @@ var React = require('react');
     var main_content = React.createClass({displayName: "main_content",
       render: function(){
         return (
-          React.createElement("h3", null, "This is the main content")
+        React.createElement("div", {className: "main-content"}, 
+          React.createElement("h3", null, "Hi This is the main content")
+          )
         );
       }
     });

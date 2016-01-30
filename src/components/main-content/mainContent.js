@@ -3,7 +3,9 @@ var React = require('react');
     var main_content = React.createClass({
       render: function(){
         return (
-          <h3>This is the main content</h3>
+        <div className="main-content">
+          <h3>Hi This is the main content</h3>
+          </div>
         );
       }
     });
