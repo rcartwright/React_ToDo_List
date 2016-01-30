@@ -28359,7 +28359,7 @@ var React = require('react');
       render: function(){
         return (
         React.createElement("div", {className: "main-content"}, 
-          React.createElement("h3", null, "Hi This is the main content")
+          React.createElement("h3", null, "Hi This is the main content. Main Content.")
           )
         );
       }

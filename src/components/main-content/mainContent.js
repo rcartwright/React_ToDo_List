@@ -4,7 +4,7 @@ var React = require('react');
       render: function(){
         return (
         <div className="main-content">
-          <h3>Hi This is the main content</h3>
+          <h3>Hi This is the main content. Main Content.</h3>
           </div>
         );
       }
