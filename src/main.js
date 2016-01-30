@@ -1,5 +1,7 @@
 $ = jQuery = require('jquery');
 var React = require('react');
+var Header = require('./components/header/header');
+var Footer = require('./components/footer/footer');
 var Home = require('./pages/index');
 var About = require('./pages/about');
 var Todo = require('./pages/todo');
@@ -18,7 +20,11 @@ var Todo = require('./pages/todo');
       }
 
       return (
+        <div>
+        <Header/>
           <Child/>
+          <Footer/>
+          </div>
       );
 
     }

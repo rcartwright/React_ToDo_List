@@ -28327,17 +28327,30 @@ var React = require('react');
     module.exports = footer;
 
 },{"react":158}],161:[function(require,module,exports){
+"use strict";
+
 var React = require('react');
 
-    var header = React.createClass({displayName: "header",
-      render: function(){
-        return (
-          React.createElement("h3", null, "This is the header")
-        );
-      }
-    });
+var Header = React.createClass({displayName: "Header",
+	render: function() {
+		return (
+        React.createElement("nav", {className: "navbar navbar-default"}, 
+          React.createElement("div", {className: "container-fluid"}, 
+              React.createElement("a", {href: "/", className: "navbar-brand"}, 
+                React.createElement("img", {src: "images/pluralsight-logo.png"})
+              ), 
+              React.createElement("ul", {className: "nav navbar-nav"}, 
+                React.createElement("li", null, React.createElement("a", {href: "/"}, "Home")), 
+                React.createElement("li", null, React.createElement("a", {href: "/#about"}, "About")), 
+                React.createElement("li", null, React.createElement("a", {href: "/#todo"}, "Todo"))
+              )
+          )
+        )
+		);
+	}
+});
 
-    module.exports = header;
+module.exports = Header;
 
 },{"react":158}],162:[function(require,module,exports){
 var React = require('react');
@@ -28355,6 +28368,8 @@ var React = require('react');
 },{"react":158}],163:[function(require,module,exports){
 $ = jQuery = require('jquery');
 var React = require('react');
+var Header = require('./components/header/header');
+var Footer = require('./components/footer/footer');
 var Home = require('./pages/index');
 var About = require('./pages/about');
 var Todo = require('./pages/todo');
@@ -28373,7 +28388,11 @@ var Todo = require('./pages/todo');
       }
 
       return (
-          React.createElement(Child, null)
+        React.createElement("div", null, 
+        React.createElement(Header, null), 
+          React.createElement(Child, null), 
+          React.createElement(Footer, null)
+          )
       );
 
     }
@@ -28388,21 +28407,15 @@ var Todo = require('./pages/todo');
   render();
 })(window);
 
-},{"./pages/about":164,"./pages/index":165,"./pages/todo":166,"jquery":2,"react":158}],164:[function(require,module,exports){
+},{"./components/footer/footer":160,"./components/header/header":161,"./pages/about":164,"./pages/index":165,"./pages/todo":166,"jquery":2,"react":158}],164:[function(require,module,exports){
 var React = require('react');
-var Header = require('../components/header/header');
 var MainContent = require('../components/main-content/mainContent');
-var Footer = require('../components/footer/footer');
 
 
     var AboutApp = React.createClass({displayName: "AboutApp",
       render: function(){
         return (
-        	React.createElement("div", null, 
-        React.createElement(Header, null), 
-          React.createElement(MainContent, null), 
-          React.createElement(Footer, null)
-          )
+          React.createElement(MainContent, null)
         );
       }
     });
@@ -28410,21 +28423,15 @@ var Footer = require('../components/footer/footer');
 
     module.exports = AboutApp;
 
-},{"../components/footer/footer":160,"../components/header/header":161,"../components/main-content/mainContent":162,"react":158}],165:[function(require,module,exports){
+},{"../components/main-content/mainContent":162,"react":158}],165:[function(require,module,exports){
 var React = require('react');
-var Header = require('../components/header/header');
 var MainContent = require('../components/main-content/mainContent');
-var Footer = require('../components/footer/footer');
 
 
     var HomeApp = React.createClass({displayName: "HomeApp",
       render: function(){
         return (
-        	React.createElement("div", null, 
-        React.createElement(Header, null), 
-          React.createElement(MainContent, null), 
-          React.createElement(Footer, null)
-          )
+          React.createElement(MainContent, null)
         );
       }
     });
@@ -28432,21 +28439,14 @@ var Footer = require('../components/footer/footer');
 
     module.exports = HomeApp;
 
-},{"../components/footer/footer":160,"../components/header/header":161,"../components/main-content/mainContent":162,"react":158}],166:[function(require,module,exports){
+},{"../components/main-content/mainContent":162,"react":158}],166:[function(require,module,exports){
 var React = require('react');
-var Header = require('../components/header/header');
 var Todo = require('../components/TodoApp');
-var Footer = require('../components/footer/footer');
-
 
     var ToDoPage = React.createClass({displayName: "ToDoPage",
       render: function(){
         return (
-        	React.createElement("div", null, 
-        React.createElement(Header, null), 
-          React.createElement(Todo, null), 
-          React.createElement(Footer, null)
-          )
+          React.createElement(Todo, null)
         );
       }
     });
@@ -28454,4 +28454,4 @@ var Footer = require('../components/footer/footer');
 
     module.exports = ToDoPage;
 
-},{"../components/TodoApp":159,"../components/footer/footer":160,"../components/header/header":161,"react":158}]},{},[163]);
+},{"../components/TodoApp":159,"react":158}]},{},[163]);
