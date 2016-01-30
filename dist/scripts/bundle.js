@@ -28360,18 +28360,33 @@ var About = require('./pages/about');
 var Todo = require('./pages/todo');
 
 
-    var App = React.createClass({displayName: "App",
-      render: function(){
-        return (
-        	React.createElement("div", null, 
-          React.createElement(Home, null)
-            )
-        );
+(function(win) {
+  "use strict";
+  var App = React.createClass({displayName: "App",
+    render: function() {
+      var Child;
+
+      switch(this.props.route) {
+        case 'about': Child = About; break;
+        case 'todo': Child = Todo; break;
+        default: Child = Home;
       }
-    });
 
+      return (
+          React.createElement(Child, null)
+      );
 
-React.render(React.createElement(App, null), document.getElementById('app'));
+    }
+  });
+
+  function render() {
+    var route = window.location.hash.substr(1);
+    React.render(React.createElement(App, {route: route}), document.getElementById('app'));
+  }
+
+  window.addEventListener('hashchange', render);
+  render();
+})(window);
 
 },{"./pages/about":164,"./pages/index":165,"./pages/todo":166,"jquery":2,"react":158}],164:[function(require,module,exports){
 var React = require('react');

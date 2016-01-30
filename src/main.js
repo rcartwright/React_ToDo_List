@@ -5,15 +5,30 @@ var About = require('./pages/about');
 var Todo = require('./pages/todo');
 
 
-    var App = React.createClass({
-      render: function(){
-        return (
-        	<div>
-          <Home />
-            </div>
-        );
+(function(win) {
+  "use strict";
+  var App = React.createClass({
+    render: function() {
+      var Child;
+
+      switch(this.props.route) {
+        case 'about': Child = About; break;
+        case 'todo': Child = Todo; break;
+        default: Child = Home;
       }
-    });
 
+      return (
+          <Child/>
+      );
 
-React.render(<App/>, document.getElementById('app'));
+    }
+  });
+
+  function render() {
+    var route = window.location.hash.substr(1);
+    React.render(<App route={route} />, document.getElementById('app'));
+  }
+
+  window.addEventListener('hashchange', render);
+  render();
+})(window);
