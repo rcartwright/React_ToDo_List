@@ -28443,7 +28443,7 @@ var MainContent = require('../components/main-content/mainContent');
 
 },{"../components/main-content/mainContent":162,"react":158}],166:[function(require,module,exports){
 var React = require('react');
-var Todo = require('../components/TodoApp');
+var Todo = require('../components/Todo/TodoApp');
 
     var ToDoPage = React.createClass({displayName: "ToDoPage",
       render: function(){
@@ -28456,4 +28456,4 @@ var Todo = require('../components/TodoApp');
 
     module.exports = ToDoPage;
 
-},{"../components/TodoApp":159,"react":158}]},{},[163]);
+},{"../components/Todo/TodoApp":159,"react":158}]},{},[163]);

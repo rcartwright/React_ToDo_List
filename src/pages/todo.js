@@ -1,5 +1,5 @@
 var React = require('react');
-var Todo = require('../components/TodoApp');
+var Todo = require('../components/Todo/TodoApp');
 
     var ToDoPage = React.createClass({
       render: function(){
