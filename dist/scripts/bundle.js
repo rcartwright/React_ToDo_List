@@ -28232,6 +28232,37 @@ module.exports = warning;
 module.exports = require('./lib/React');
 
 },{"./lib/React":26}],159:[function(require,module,exports){
+var React = require('react');
+var TodoBanner = require('./TodoBanner/TodoBanner');
+var TodoForm = require('./TodoForm/TodoForm');
+var TodoList = require('./TodoList/TodoList');
+
+    var TodoApp = React.createClass({displayName: "TodoApp",
+      getInitialState: function() {
+      return {items: ['Todo item #1', 'Todo item #2']};
+      },
+      updateItems: function(newItem) {
+        var allItems = this.state.items.concat([newItem]);
+        this.setState({
+        items: allItems
+      });
+      },
+      render: function() {
+      return (
+        React.createElement("div", {className: "app-container"}, 
+        React.createElement(TodoBanner, null), 
+        React.createElement(TodoList, {items: this.state.items}), 
+        React.createElement(TodoForm, {onFormSubmit: this.updateItems})
+        )
+      );
+      }
+    });
+
+
+
+    module.exports = TodoApp;
+
+},{"./TodoBanner/TodoBanner":160,"./TodoForm/TodoForm":161,"./TodoList/TodoList":163,"react":158}],160:[function(require,module,exports){
     var React = require('react');
 
     var TodoBanner = React.createClass({displayName: "TodoBanner",
@@ -28242,25 +28273,11 @@ module.exports = require('./lib/React');
       }
     });
 
+module.exports = TodoBanner;
 
+},{"react":158}],161:[function(require,module,exports){
+var React = require('react');
 
-
-var TodoListItem = React.createClass({displayName: "TodoListItem",
-  render: function() {
-    return React.createElement("li", {key: this.props.data.id}, this.props.data);
-  }
-});
-var TodoList = React.createClass({displayName: "TodoList",
-  render: function() {
-    return (
-      React.createElement("ul", null, 
-        this.props.items.map(function(item) {
-           return React.createElement(TodoListItem, {key: item.id, data: item});
-        })
-      )
-    );
-  }
-});
 
     var TodoForm = React.createClass({displayName: "TodoForm",
       getInitialState: function() {
@@ -28288,32 +28305,39 @@ var TodoList = React.createClass({displayName: "TodoList",
       }
     });
 
-    var TodoApp = React.createClass({displayName: "TodoApp",
-      getInitialState: function() {
-      return {items: ['Todo item #1', 'Todo item #2']};
-      },
-      updateItems: function(newItem) {
-        var allItems = this.state.items.concat([newItem]);
-        this.setState({
-        items: allItems
-      });
-      },
-      render: function() {
-      return (
-        React.createElement("div", {className: "app-container"}, 
-        React.createElement(TodoBanner, null), 
-        React.createElement(TodoList, {items: this.state.items}), 
-        React.createElement(TodoForm, {onFormSubmit: this.updateItems})
-        )
-      );
-      }
-    });
+module.exports = TodoForm;
+
+},{"react":158}],162:[function(require,module,exports){
+var React = require('react');
 
 
+var TodoListItem = React.createClass({displayName: "TodoListItem",
+  render: function() {
+    return React.createElement("li", {key: this.props.data.id}, this.props.data);
+  }
+});
 
-    module.exports = TodoApp;
+module.exports = TodoListItem;
 
-},{"react":158}],160:[function(require,module,exports){
+},{"react":158}],163:[function(require,module,exports){
+var React = require('react');
+var TodoListItem = require('../TodoItem/TodoItem');
+
+var TodoList = React.createClass({displayName: "TodoList",
+  render: function() {
+    return (
+      React.createElement("ul", null, 
+        this.props.items.map(function(item) {
+           return React.createElement(TodoListItem, {key: item.id, data: item});
+        })
+      )
+    );
+  }
+});
+
+module.exports = TodoList;
+
+},{"../TodoItem/TodoItem":162,"react":158}],164:[function(require,module,exports){
 var React = require('react');
 
     var footer = React.createClass({displayName: "footer",
@@ -28326,7 +28350,7 @@ var React = require('react');
 
     module.exports = footer;
 
-},{"react":158}],161:[function(require,module,exports){
+},{"react":158}],165:[function(require,module,exports){
 "use strict";
 
 var React = require('react');
@@ -28352,7 +28376,7 @@ var Header = React.createClass({displayName: "Header",
 
 module.exports = Header;
 
-},{"react":158}],162:[function(require,module,exports){
+},{"react":158}],166:[function(require,module,exports){
 var React = require('react');
 
     var main_content = React.createClass({displayName: "main_content",
@@ -28367,7 +28391,7 @@ var React = require('react');
 
     module.exports = main_content;
 
-},{"react":158}],163:[function(require,module,exports){
+},{"react":158}],167:[function(require,module,exports){
 $ = jQuery = require('jquery');
 var React = require('react');
 var Header = require('./components/header/header');
@@ -28409,7 +28433,7 @@ var Todo = require('./pages/todo');
   render();
 })(window);
 
-},{"./components/footer/footer":160,"./components/header/header":161,"./pages/about":164,"./pages/index":165,"./pages/todo":166,"jquery":2,"react":158}],164:[function(require,module,exports){
+},{"./components/footer/footer":164,"./components/header/header":165,"./pages/about":168,"./pages/index":169,"./pages/todo":170,"jquery":2,"react":158}],168:[function(require,module,exports){
 var React = require('react');
 var MainContent = require('../components/main-content/mainContent');
 
@@ -28425,7 +28449,7 @@ var MainContent = require('../components/main-content/mainContent');
 
     module.exports = AboutApp;
 
-},{"../components/main-content/mainContent":162,"react":158}],165:[function(require,module,exports){
+},{"../components/main-content/mainContent":166,"react":158}],169:[function(require,module,exports){
 var React = require('react');
 var MainContent = require('../components/main-content/mainContent');
 
@@ -28441,7 +28465,7 @@ var MainContent = require('../components/main-content/mainContent');
 
     module.exports = HomeApp;
 
-},{"../components/main-content/mainContent":162,"react":158}],166:[function(require,module,exports){
+},{"../components/main-content/mainContent":166,"react":158}],170:[function(require,module,exports){
 var React = require('react');
 var Todo = require('../components/Todo/TodoApp');
 
@@ -28456,4 +28480,4 @@ var Todo = require('../components/Todo/TodoApp');
 
     module.exports = ToDoPage;
 
-},{"../components/Todo/TodoApp":159,"react":158}]},{},[163]);
+},{"../components/Todo/TodoApp":159,"react":158}]},{},[167]);
