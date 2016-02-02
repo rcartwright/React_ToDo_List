@@ -6770,6 +6770,10 @@ body {
 
 
 
+.main-content h3 {
+  color: purple;
+}
+
 .app-container {
   width: 238px;
   background-color: white;
@@ -6777,8 +6781,4 @@ body {
   border-radius: 5px;
   border: 1px solid rgba(128, 128, 128, 0.47);
   margin: 100px auto;
-}
-
-.main-content h3 {
-  color: purple;
 }

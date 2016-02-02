@@ -28913,28 +28913,19 @@ module.exports = TodoBanner;
 var React = require('react');
 
 
-    var TodoForm = React.createClass({displayName: "TodoForm",
-      getInitialState: function() {
-        return {item: ''};
-        },
-      handleSubmit: function(e){
-        e.preventDefault();
-        this.props.onFormSubmit(this.state.item);
-        this.setState({item: ''});
-        React.findDOMNode(this.refs.item).focus();
-        return;
-      },
-      onChange: function(e){
-        this.setState({
-          item: e.target.value
-        });
-      },
+  var TodoForm = React.createClass({displayName: "TodoForm",
+    handleSubmit: function(e){
+    if(e.keyCode === 13){
+      var newItem = this.refs.newItem.getDOMNode().value;
+      this.refs.newItem.getDOMNode().value = '';
+      this.props.add(newItem);
+    }
+  },
       render: function(){
         return (
-          React.createElement("form", {onSubmit: this.handleSubmit}, 
-            React.createElement("input", {type: "text", ref: "item", onChange: this.onChange, value: this.state.item}), 
-            React.createElement("input", {type: "submit", value: "Add"})
-          )
+        React.createElement("div", null, 
+        React.createElement("input", {type: "text", ref: "newItem", className: "form-control", placeholder: "New Item", onKeyDown: this.handleSubmit})
+      )
         );
       }
     });
