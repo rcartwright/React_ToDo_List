@@ -8,7 +8,7 @@ var todoStore = require('../../stores/TodoStore');
     var TodoApp = React.createClass({
       getInitialState: function() {
       return {
-        list: (['Todo item #1', 'Todo item #2'], todoStore.getList())
+        list: todoStore.getList()
         }
       },
       componentDidMount: function(){
@@ -25,14 +25,13 @@ var todoStore = require('../../stores/TodoStore');
       },
       _onChange: function(){
         this.setState({
-          //was list
           list: todoStore.getList()
         })
       },
       render: function() {
           return (
             <div className="app-container">
-            <TodoBanner/>  //this.state.list or
+            <TodoBanner/>
             <TodoList items={this.state.list} remove={this.handleRemoveItem}/>
             <TodoForm add={this.handleAddItem}/>
             </div>

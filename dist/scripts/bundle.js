@@ -28861,7 +28861,7 @@ var todoStore = require('../../stores/TodoStore');
     var TodoApp = React.createClass({displayName: "TodoApp",
       getInitialState: function() {
       return {
-        list: (['Todo item #1', 'Todo item #2'], todoStore.getList())
+        list: todoStore.getList()
         }
       },
       componentDidMount: function(){
@@ -28878,14 +28878,13 @@ var todoStore = require('../../stores/TodoStore');
       },
       _onChange: function(){
         this.setState({
-          //was list
           list: todoStore.getList()
         })
       },
       render: function() {
           return (
             React.createElement("div", {className: "app-container"}, 
-            React.createElement(TodoBanner, null), "  //this.state.list or", 
+            React.createElement(TodoBanner, null), 
             React.createElement(TodoList, {items: this.state.list, remove: this.handleRemoveItem}), 
             React.createElement(TodoForm, {add: this.handleAddItem})
             )
@@ -29135,7 +29134,7 @@ var EventEmitter = require('events').EventEmitter;
 var CHANGE_EVENT = 'change';
 
 var _store = {
-  list: []
+  list: ['Todo item #1', 'Todo item #2']
 };
 
 var addItem = function(item){
