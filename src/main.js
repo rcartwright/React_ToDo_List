@@ -21,10 +21,10 @@ var Todo = require('./pages/todo');
 
       return (
         <div>
-        <Header/>
+          <Header/>
           <Child/>
           <Footer/>
-          </div>
+        </div>
       );
 
     }
@@ -35,6 +35,6 @@ var Todo = require('./pages/todo');
     React.render(<App route={route} />, document.getElementById('app'));
   }
 
-  window.addEventListener('hashchange', render);
+window.addEventListener('hashchange', render);
   render();
 })(window);
