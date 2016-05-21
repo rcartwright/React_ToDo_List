@@ -1,3 +1,5 @@
+"use strict";
+
 var React = require('react');
 var MainContent = require('../components/main-content/mainContent');
 

@@ -1,3 +1,5 @@
+"use strict";
+
 var React = require('react');
 var TodoBanner = require('./TodoBanner/TodoBanner');
 var TodoForm = require('./TodoForm/TodoForm');

@@ -1,3 +1,5 @@
+"use strict";
+
 var React = require('react');
 var Todo = require('../components/Todo/TodoApp');
 
