@@ -8,8 +8,7 @@ var Header = React.createClass({
 		return (
         <nav className="navbar navbar-default">
           <div className="container-fluid">
-              <a href="/" className="navbar-brand">
-                
+              <a href="/" className="navbar-brand">  
               </a>
               <ul className="nav navbar-nav">
                 <li><Link to="/">Home</Link></li>
