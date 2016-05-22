@@ -1,6 +1,6 @@
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 var appConstants = require('../constants/AppConstants');
-var objectAssign = require('react/lib/Object.assign');
+var objectAssign = require('object-assign');
 var EventEmitter = require('events').EventEmitter;
 
 var CHANGE_EVENT = 'change';
