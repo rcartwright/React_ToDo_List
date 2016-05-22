@@ -1,5 +1,6 @@
 $ = jQuery = require('jquery');
 var React = require('react');
+var ReactDOM = require('react-dom')
 var Header = require('./components/header/header');
 var Footer = require('./components/footer/footer');
 var Home = require('./pages/index');
@@ -32,7 +33,7 @@ var Todo = require('./pages/todo');
 
   function render() {
     var route = window.location.hash.substr(1);
-    React.render(<App route={route} />, document.getElementById('app'));
+    ReactDOM.render(<App route={route} />, document.getElementById('app'));
   }
 
   window.addEventListener('hashchange', render);
