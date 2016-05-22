@@ -35,7 +35,7 @@ gulp.task('connect', function() {
 		root: ['dist'],
 		port: config.port,
 		base: config.devBaseUrl,
-		livereload: true
+		livereload: true,
 	});
 });
 

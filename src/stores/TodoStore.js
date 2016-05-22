@@ -6,7 +6,7 @@ var EventEmitter = require('events').EventEmitter;
 var CHANGE_EVENT = 'change';
 
 var _store = {
-  list: []
+  list: ["idea 1", "idea 2"]
 };
 
 var addItem = function(item){
