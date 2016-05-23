@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "axios": "^0.9.1",
+    "bootstrap": "^3.3.6",
     "bootstrap-less": "^3.3.8",
     "browserify": "^11.0.1",
     "connect-history-api-fallback": "^1.2.0",
