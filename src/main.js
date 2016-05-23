@@ -1,6 +1,6 @@
 "use strict";
 
-var $ = require("jquery"); // only used to load bootstrap
+//var $ = require("jquery"); // only used to load bootstrap
 var React = require('react');
 var render = require('react-dom').render;
 var Router = require('react-router').Router;
