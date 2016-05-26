@@ -11,7 +11,7 @@ var TodoList = React.createClass({
 	render: function() {
 		var remove = this.handleRemove;
 	    return (
-	      <ul>
+	      <ul className="list-items-container">
 	        {this.props.items.map(function(item, i) {
 	           return <TodoListItem onClick={remove} key={i} id={i} data={item}/>;
 	        })}

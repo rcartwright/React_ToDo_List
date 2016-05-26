@@ -14,7 +14,7 @@ var TodoForm = React.createClass({
 render: function(){
   return (
     <div>
-      <input type="text" ref="newItem" className="form-control" placeholder="New Item" onKeyDown={this.handleSubmit} />
+      <input type="text" ref="newItem" className="input-lg form-control" placeholder="New Item" onKeyDown={this.handleSubmit} />
     </div>
       );
     }
