@@ -6727,6 +6727,18 @@ button.close {
 body {
   background-color: lightblue;
 }
+.navbar-default {
+  background-color: #b64f53;
+}
+.navbar-default a {
+  color: white !important;
+  font-weight: 600;
+}
+h3 {
+  text-align: center;
+  font-weight: 900;
+  color: white;
+}
 
 
 
@@ -6741,18 +6753,6 @@ body {
   border-radius: 5px;
   border: 1px solid rgba(128, 128, 128, 0.47);
   margin: 100px auto;
-}
-.navbar-default {
-  background-color: #b64f53;
-}
-.navbar-default a {
-  color: white !important;
-  font-weight: 600;
-}
-h3 {
-  text-align: center;
-  font-weight: 900;
-  color: white;
 }
 .list-items-container {
   padding: 0;
