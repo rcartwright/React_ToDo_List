@@ -15,11 +15,27 @@ app.use(express.static(__dirname + '/dist'));
 app.get('/', function(req, res) {
 
     // ejs render automatically looks in the views folder
- //   res.render('index');
+    res.render('/../index.html');
  console.log(app);
- return app;
+// return app;
 });
 
 app.listen(port, function() {
     console.log('Our app is running on http://localhost:' + port);
 });
+
+/*var path = require('path')
+var express = require('express')
+
+module.exports = {
+  app: function () {
+    var app = express()
+    var indexPath = path.join(__dirname, '/../index.html')
+    var publicPath = express.static(path.join(__dirname, '../public'))
+
+    app.use('/public', publicPath)
+    app.get('/', function (_, res) { res.sendFile(indexPath) })
+
+    return app
+  }
+}*/
