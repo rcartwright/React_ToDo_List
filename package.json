@@ -33,7 +33,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "postinstall": "gulp"
+    "postinstall": "gulp js"
   },
   "author": "",
   "license": "ISC"
