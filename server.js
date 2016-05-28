@@ -6,7 +6,7 @@ var app = express();
 var port = process.env.PORT || 8080;
 
 // set the view engine to ejs
-app.set('view engine', 'ejs');
+//app.set('view engine', 'ejs');
 
 // make express look in the public directory for assets (css/js/img)
 app.use(express.static(__dirname + '/dist'));
@@ -21,3 +21,19 @@ app.get('/', function(req, res) {
 app.listen(port, function() {
     console.log('Our app is running on http://localhost:' + port);
 });
+
+/*const path = require('path')
+const express = require('express')
+
+module.exports = {
+  app: function () {
+    const app = express()
+    const indexPath = path.join(__dirname, '/../index.html')
+    const publicPath = express.static(path.join(__dirname, '../public'))
+
+    app.use('/public', publicPath)
+    app.get('/', function (_, res) { res.sendFile(indexPath) })
+
+    return app
+  }
+}*/
