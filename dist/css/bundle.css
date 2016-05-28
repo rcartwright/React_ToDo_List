@@ -6742,11 +6742,12 @@ body {
   border: 1px solid rgba(128, 128, 128, 0.47);
   margin: 100px auto;
 }
-.nav-bar {
-  background-color: #d55877;
+.navbar-default {
+  background-color: #b64f53;
 }
-.nav-bar a {
-  color: #f69c89 !important;
+.navbar-default a {
+  color: white !important;
+  font-weight: 600;
 }
 h3 {
   text-align: center;
