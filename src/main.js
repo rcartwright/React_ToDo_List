@@ -7,7 +7,7 @@ var Router = require('react-router').Router;
 var Route = require('react-router').Route;
 var IndexRoute = require('react-router').IndexRoute;
 var Link = require('react-router').Link;
-var hashHistory = require('react-router').hashHistory;
+var browserHistory = require('react-router').browserHistory;
 
 var Header = require('./components/header/header');
 var Footer = require('./components/footer/footer');
@@ -30,7 +30,7 @@ var App = React.createClass({
 })
 
 render((
-  <Router history={hashHistory}>
+  <Router history={browserHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Todo} />
       <Route path="about" component={About} />
